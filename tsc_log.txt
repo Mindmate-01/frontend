@@ -1,0 +1,58 @@
+lib/utils.ts(1,39): error TS2307: Cannot find module 'clsx' or its corresponding type declarations.
+lib/utils.ts(2,25): error TS2307: Cannot find module 'tailwind-merge' or its corresponding type declarations.
+src/app/dashboard/chat/page.tsx(4,31): error TS7016: Could not find a declaration file for module 'lucide-react'. 'C:/Users/USER/mindmate/frontend/node_modules/lucide-react/dist/cjs/lucide-react.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lucide-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'lucide-react';`
+src/app/dashboard/chat/page.tsx(177,43): error TS2322: Type '{ children: Element; type: "submit"; size: string; disabled: boolean; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'size' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/app/dashboard/layout.tsx(7,64): error TS7016: Could not find a declaration file for module 'lucide-react'. 'C:/Users/USER/mindmate/frontend/node_modules/lucide-react/dist/cjs/lucide-react.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lucide-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'lucide-react';`
+src/app/dashboard/layout.tsx(48,37): error TS2322: Type '{ children: (string | Element)[]; variant: string; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/app/dashboard/layout.tsx(65,25): error TS2322: Type '{ children: (string | Element)[]; variant: string; className: string; onClick: () => void; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/app/dashboard/resources/page.tsx(3,37): error TS7016: Could not find a declaration file for module 'lucide-react'. 'C:/Users/USER/mindmate/frontend/node_modules/lucide-react/dist/cjs/lucide-react.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lucide-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'lucide-react';`
+src/app/dashboard/resources/page.tsx(58,45): error TS2322: Type '{ children: Element; variant: string; size: string; asChild: true; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/app/dashboard/wellness/page.tsx(7,25): error TS7016: Could not find a declaration file for module 'lucide-react'. 'C:/Users/USER/mindmate/frontend/node_modules/lucide-react/dist/cjs/lucide-react.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lucide-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'lucide-react';`
+src/app/layout.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/app/login/page.tsx(15,33): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/app/page.tsx(15,21): error TS2322: Type '{ children: string; variant: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/app/page.tsx(37,21): error TS2322: Type '{ children: string; size: string; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'size' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/app/page.tsx(40,21): error TS2322: Type '{ children: string; variant: string; size: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/app/register/page.tsx(15,33): error TS7006: Parameter 'state' implicitly has an 'any' type.
+src/components/chat/CrisisAlert.tsx(10,36): error TS7016: Could not find a declaration file for module 'lucide-react'. 'C:/Users/USER/mindmate/frontend/node_modules/lucide-react/dist/cjs/lucide-react.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lucide-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'lucide-react';`
+src/components/chat/CrisisAlert.tsx(39,33): error TS2322: Type '{ children: Element; variant: string; size: string; asChild: true; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/components/chat/CrisisAlert.tsx(48,33): error TS2322: Type '{ children: Element; variant: string; size: string; asChild: true; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/components/chat/MessageBubble.tsx(1,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/alert-dialog.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/button.tsx(3,40): error TS2307: Cannot find module 'class-variance-authority' or its corresponding type declarations.
+src/components/ui/button.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/button.tsx(43,19): error TS2339: Property 'variant' does not exist on type 'ButtonProps'.
+src/components/ui/button.tsx(43,28): error TS2339: Property 'size' does not exist on type 'ButtonProps'.
+src/components/ui/card.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/dialog.tsx(5,19): error TS7016: Could not find a declaration file for module 'lucide-react'. 'C:/Users/USER/mindmate/frontend/node_modules/lucide-react/dist/cjs/lucide-react.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lucide-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'lucide-react';`
+src/components/ui/dialog.tsx(7,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/input.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/ui/label.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/components/wellness/MoodChart.tsx(11,8): error TS2307: Cannot find module 'recharts' or its corresponding type declarations.
+src/components/wellness/MoodLoggingDialog.tsx(17,31): error TS7016: Could not find a declaration file for module 'lucide-react'. 'C:/Users/USER/mindmate/frontend/node_modules/lucide-react/dist/cjs/lucide-react.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/lucide-react` if it exists or add a new declaration (.d.ts) file containing `declare module 'lucide-react';`
+src/components/wellness/MoodLoggingDialog.tsx(67,37): error TS2322: Type '{ children: string; key: string; type: "button"; variant: string; size: string; onClick: () => void; className: string; }' is not assignable to type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonProps & RefAttributes<HTMLButtonElement>'.
+src/lib/api.ts(1,19): error TS2307: Cannot find module 'axios' or its corresponding type declarations.
+src/lib/api.ts(13,6): error TS7006: Parameter 'config' implicitly has an 'any' type.
+src/lib/api.ts(20,6): error TS7006: Parameter 'error' implicitly has an 'any' type.
+src/lib/store.ts(1,24): error TS2307: Cannot find module 'zustand' or its corresponding type declarations.
+src/lib/store.ts(2,25): error TS2307: Cannot find module 'zustand/middleware' or its corresponding type declarations.
+src/lib/store.ts(19,10): error TS7006: Parameter 'set' implicitly has an 'any' type.
+src/lib/store.ts(22,21): error TS7006: Parameter 'user' implicitly has an 'any' type.
+src/lib/store.ts(22,27): error TS7006: Parameter 'token' implicitly has an 'any' type.
