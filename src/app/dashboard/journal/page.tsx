@@ -5,7 +5,7 @@ import { useAuthStore } from "@/lib/store";
 import api from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Plus, BookOpen, Calendar, Smile, Frown, Meh, Heart, Sun, Cloud, Loader2, Trash2, Edit3, X, Eye } from "lucide-react";
+import { Plus, BookOpen, Calendar, Smile, Frown, Meh, Heart, Sun, Cloud, Loader2, Trash2, Edit3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
     Dialog,

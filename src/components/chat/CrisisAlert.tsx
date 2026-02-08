@@ -9,9 +9,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Phone, ShieldAlert } from "lucide-react";
 
-interface CrisisAlertProps {
-    open: boolean;
-}
+
 
 export function CrisisAlert({ open, onSafe }: { open: boolean; onSafe?: () => void }) {
     return (
@@ -23,7 +21,7 @@ export function CrisisAlert({ open, onSafe }: { open: boolean; onSafe?: () => vo
                         <AlertDialogTitle className="text-xl">Safety Pause</AlertDialogTitle>
                     </div>
                     <AlertDialogDescription className="text-foreground">
-                        We've detected that you might be going through a difficult time right now.
+                        We&apos;ve detected that you might be going through a difficult time right now.
                         For your safety, this chat session has been paused.
                         <br /><br />
                         Please reach out to a professional or a helpline immediately. You are not alone.

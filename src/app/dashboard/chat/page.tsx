@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Send, Loader2, MessageSquare, Brain, Zap, Moon, Search, Paperclip, Mic } from "lucide-react";
+import { Send, Loader2, Brain, Zap, Search, Paperclip } from "lucide-react";
 import api from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -268,7 +268,7 @@ export default function ChatPage() {
     );
 }
 
-function SparklesIcon(props: any) {
+function SparklesIcon(props: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}

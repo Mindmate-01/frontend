@@ -29,8 +29,9 @@ export default function LoginPage() {
             const res = await api.post("/auth/login", { email, password });
             login(res.data, res.data.token);
             router.push("/dashboard/chat");
-        } catch (err: any) {
-            setError(err.response?.data?.message || "Login failed");
+        } catch (err: unknown) {
+            const error = err as { response?: { data?: { message?: string } } };
+            setError(error.response?.data?.message || "Login failed");
         } finally {
             setLoading(false);
         }

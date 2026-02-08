@@ -90,7 +90,7 @@ export default function Home() {
             </div>
             <div className="bg-card/50 p-6 rounded-2xl shadow-sm border border-border/50 text-center">
               <p className="text-5xl font-bold text-primary mb-2">24/7</p>
-              <p className="text-sm text-muted-foreground">Availability of our AI companion. Because crisis doesn't follow a 9-to-5 schedule.</p>
+              <p className="text-sm text-muted-foreground">Availability of our AI companion. Because crisis doesn&apos;t follow a 9-to-5 schedule.</p>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
               <div className="md:w-[45%] text-center md:text-right order-2 md:order-1">
                 <h3 className="text-2xl font-bold font-serif mb-2">1. The Check-In</h3>
-                <p className="text-muted-foreground">Log your mood or share what's on your mind. Just getting it out is the first relief.</p>
+                <p className="text-muted-foreground">Log your mood or share what&apos;s on your mind. Just getting it out is the first relief.</p>
               </div>
               <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-background border-4 border-primary flex items-center justify-center z-10 hidden md:flex">
                 <div className="w-2 h-2 rounded-full bg-primary"></div>
@@ -202,7 +202,7 @@ export default function Home() {
           </div>
           <h2 className="text-3xl font-bold font-serif text-foreground">In Immediate Danger?</h2>
           <p className="text-lg text-muted-foreground">
-            If you or someone you know is at risk of harm, please don't wait. Connection is the first step to healing.
+            If you or someone you know is at risk of harm, please don&apos;t wait. Connection is the first step to healing.
           </p>
           <div className="pt-4">
             <Link href="/dashboard/resources">

@@ -29,8 +29,9 @@ export default function RegisterPage() {
             const res = await api.post("/auth/register", { email, password });
             login(res.data, res.data.token);
             router.push("/dashboard/chat");
-        } catch (err: any) {
-            setError(err.response?.data?.message || "Registration failed");
+        } catch (err: unknown) {
+            const error = err as { response?: { data?: { message?: string } } };
+            setError(error.response?.data?.message || "Registration failed");
         } finally {
             setLoading(false);
         }
