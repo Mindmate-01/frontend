@@ -60,7 +60,7 @@ export function Sidebar({ className, onSessionSelect, activeSessionId }: Sidebar
     const handleNewChat = async () => {
         if (!token) return;
         try {
-            const { data: newSession } = await api.post("/chat/start");
+            const { data: newSession } = await api.post("/chat/start", {});
             setSessions((prev) => [newSession, ...prev]);
             if (onSessionSelect) {
                 onSessionSelect(newSession._id);

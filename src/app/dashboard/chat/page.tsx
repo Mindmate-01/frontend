@@ -40,7 +40,7 @@ export default function ChatPage() {
                         setIsLocked(true);
                     }
                 } else {
-                    const { data: newSession } = await api.post("/chat/start");
+                    const { data: newSession } = await api.post("/chat/start", {});
                     currentSessionId = newSession._id;
                 }
 
