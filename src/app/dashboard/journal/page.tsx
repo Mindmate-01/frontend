@@ -5,7 +5,7 @@ import { useAuthStore } from "@/lib/store";
 import api from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Plus, BookOpen, Calendar, Smile, Frown, Meh, Heart, Sun, Cloud, Loader2, Trash2, Edit3 } from "lucide-react";
+import { Plus, BookOpen, Calendar, Smile, Frown, Meh, Heart, Sun, Cloud, Loader2, Trash2, Edit3, X, Eye } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
     Dialog,
@@ -45,6 +45,7 @@ export default function JournalPage() {
     const [content, setContent] = useState("");
     const [mood, setMood] = useState<string | null>(null);
     const [isSaving, setIsSaving] = useState(false);
+    const [viewingEntry, setViewingEntry] = useState<JournalEntry | null>(null);
 
     const fetchEntries = async () => {
         if (!token) return;
@@ -129,6 +130,11 @@ export default function JournalPage() {
         if (!moodOption) return null;
         const Icon = moodOption.icon;
         return <Icon size={16} className={moodOption.color} />;
+    };
+
+    const getMoodLabel = (moodValue: string | null) => {
+        const moodOption = moodOptions.find((m) => m.value === moodValue);
+        return moodOption?.label || null;
     };
 
     return (
@@ -237,7 +243,11 @@ export default function JournalPage() {
                 ) : (
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                         {entries.map((entry) => (
-                            <Card key={entry._id} className="group hover:shadow-md transition-shadow bg-card">
+                            <Card
+                                key={entry._id}
+                                className="group hover:shadow-md transition-shadow bg-card cursor-pointer"
+                                onClick={() => setViewingEntry(entry)}
+                            >
                                 <CardHeader className="pb-2">
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1 min-w-0">
@@ -259,7 +269,10 @@ export default function JournalPage() {
                                                 variant="ghost"
                                                 size="icon"
                                                 className="h-8 w-8"
-                                                onClick={() => openEditDialog(entry)}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    openEditDialog(entry);
+                                                }}
                                             >
                                                 <Edit3 size={14} />
                                             </Button>
@@ -267,7 +280,10 @@ export default function JournalPage() {
                                                 variant="ghost"
                                                 size="icon"
                                                 className="h-8 w-8 text-destructive hover:text-destructive"
-                                                onClick={() => handleDelete(entry._id)}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    handleDelete(entry._id);
+                                                }}
                                             >
                                                 <Trash2 size={14} />
                                             </Button>
@@ -278,12 +294,66 @@ export default function JournalPage() {
                                     <p className="text-sm text-muted-foreground line-clamp-4">
                                         {entry.content}
                                     </p>
+                                    <p className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                        Click to read more...
+                                    </p>
                                 </CardContent>
                             </Card>
                         ))}
                     </div>
                 )}
             </div>
+
+            {/* View Entry Dialog */}
+            <Dialog open={!!viewingEntry} onOpenChange={(open) => !open && setViewingEntry(null)}>
+                <DialogContent className="sm:max-w-[700px] max-h-[85vh] overflow-hidden flex flex-col">
+                    <DialogHeader className="border-b border-border pb-4">
+                        <div className="flex items-start justify-between pr-8">
+                            <div>
+                                <DialogTitle className="text-xl font-serif">
+                                    {viewingEntry?.title}
+                                </DialogTitle>
+                                <div className="flex items-center gap-3 mt-2 text-sm text-muted-foreground">
+                                    <span className="flex items-center gap-1.5">
+                                        <Calendar size={14} />
+                                        {viewingEntry && formatDate(viewingEntry.createdAt)}
+                                    </span>
+                                    {viewingEntry?.mood && (
+                                        <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary/10">
+                                            {getMoodIcon(viewingEntry.mood)}
+                                            <span className="text-xs">{getMoodLabel(viewingEntry.mood)}</span>
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    </DialogHeader>
+                    <div className="flex-1 overflow-y-auto py-4">
+                        <p className="text-foreground whitespace-pre-wrap leading-relaxed">
+                            {viewingEntry?.content}
+                        </p>
+                    </div>
+                    <div className="flex justify-end gap-3 pt-4 border-t border-border">
+                        <Button
+                            variant="outline"
+                            onClick={() => setViewingEntry(null)}
+                        >
+                            Close
+                        </Button>
+                        <Button
+                            onClick={() => {
+                                if (viewingEntry) {
+                                    openEditDialog(viewingEntry);
+                                    setViewingEntry(null);
+                                }
+                            }}
+                        >
+                            <Edit3 size={16} className="mr-2" />
+                            Edit Entry
+                        </Button>
+                    </div>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 }
