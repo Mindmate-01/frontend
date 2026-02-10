@@ -2,7 +2,7 @@ import axios from "axios";
 import { useAuthStore } from "./store";
 
 const api = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://mindmate-backend-8gxe.onrender.com/api",
     headers: {
         "Content-Type": "application/json",
     },
